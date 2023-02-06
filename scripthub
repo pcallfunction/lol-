@@ -322,12 +322,12 @@ btns:Button(
     DiscordLib:Notification("Notification", "Equip a db and then unequip and then press b to active!", "________")
     
     
-    local mouse = game:GetService("Players"):WaitForChild("MiztHubBot"):GetMouse()
+    local mouse = game:GetService("Players"):WaitForChild(game.Players.LocalPlayer.Name):GetMouse()
 mouse.KeyDown:connect(function(f) 
     if f == "b" then 
 local args = {
     [1] = mouse.Target.Position,
-    [2] = game:GetService("Players"):WaitForChild("MiztHubBot"):WaitForChild("Backpack"):WaitForChild("DB")
+    [2] = game:GetService("Players"):WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("Backpack"):WaitForChild("DB")
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
