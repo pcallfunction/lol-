@@ -781,7 +781,7 @@ task.spawn(function()
                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = ownerchar.HumanoidRootPart.CFrame
                    end 
                    
-                   if player == owner and string.match(message,"-benx" .. name) then 
+                   if player == owner and string.match(message,"-funny" .. name) then 
                       	while true do wait()
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 	ownerchar.HumanoidRootPart.CFrame + 	ownerchar.HumanoidRootPart.CFrame.lookVector * 0.5
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = ownerchar.HumanoidRootPart.CFrame.lookVector * 70
@@ -807,19 +807,84 @@ task.spawn(function()
                       game.Players.LocalPlayer:Kick("get kicked dumbass")
                        end
                  if player == owner and string.match(message,"-db") then 
-                           local plr_  = string.gsub(message,"-db","")
+                           local plr_  = string.gsub(message,"-db ","")
 print(newmsg)
 selfchar.Humanoid:UnequipTools()
+local plr_char = game.Players[plr_].Character
+selfchar.HumanoidRootPart.CFrame = plr_char.LowerTorso.CFrame 
 wait(0.2)
-game.Players.LocalPlayer.Backpack.Rifle.Parent = selfchar
+game.Players.LocalPlayer.Backpack.DB.Parent = selfchar
 wait(1)
 local db 
 local args = {
-    [1] = Vector3.new(_plr.HumanoidRootPart.Position),
-    [2] = selfchar:WaitForChild("Rifle")
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
 }
 
-game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("Rifle"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(1)
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
 
                      end
                   if player == owner and string.match(message,"-chat") then 
