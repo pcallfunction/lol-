@@ -15,10 +15,59 @@ local btns =  serv:Channel("Inside Character")
 
 
 
+--[[lol:Button(""
+    ,function() 
+    
 
+
+game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("RemoteEvent"):FireServer("reset")
+end
+)]]
 
 local lol =  serv:Channel("Resize")
 
+local crash =  serv:Channel("Crasher  v1")
+
+crash:Button("stop annoying ads (should turn before get tools)",function() 
+    
+
+
+game:GetService("CoreGui").PurchasePrompt.Enabled = false
+game:GetService("Workspace").MAP["[Configure Crosshair]"]:Destroy()
+
+end
+)
+crash:Button("get tools for crash server"
+    ,function() 
+    
+--tool crasher
+ for _, descendant in ipairs(workspace:GetDescendants()) do
+                if descendant:IsA("ClickDetector") then
+                    fireclickdetector(descendant)
+                end
+ end
+        for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			v.Parent = game.Players.LocalPlayer.Character
+		end
+	end
+end
+)
+
+
+crash:Button("crash server with tools",function() 
+    
+
+ for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			v.Parent = game.Players.LocalPlayer.Character
+		end
+	end
+	
+	wait(0.5)
+	game.Players.LocalPlayer.Character.RightHand:Destroy()
+end
+)
 
 local r_resize1 =
     lol:Slider(
@@ -260,23 +309,105 @@ for _,x in next, Settings.Values do
 end
 end
 )
- if game.PlaceId ~= 9845705613  then 
-btns:Button(
-    "God Mode",
-    function()
-        local chr = plr.Character or plr.CharacterAdded:Wait()
 
-        if chr.CharacterDied then 
-            chr:WaitForChild("CharacterDied"):Destroy()
-             chr:WaitForChild("Death"):Destroy()
-             chr:WaitForChild("Ragdolled"):Destroy()
-            
-            
-        DiscordLib:Notification("Notification", "Godded", "ez!")
+btns:Button(
+    "bypass anti lock aimbot powerful guns",
+    function()
+        
+        local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+local guimain = Instance.new("Folder", game.CoreGui)
+        local CC = game:GetService"Workspace".CurrentCamera
+    local LocalMouse = game.Players.LocalPlayer:GetMouse()
+circle = Drawing.new("Circle")
+circle.Color = Color3.fromRGB(255,255,255)
+circle.Thickness = 0
+circle.NumSides = 732
+circle.Radius = 120
+circle.Thickness = 0
+circle.Transparency = 0.7
+circle.Visible = false
+circle.Filled = false
+
+game.RunService.RenderStepped:Connect(function()
+    circle.Position = Vector2.new(mouse.X,mouse.Y+35)
+end)
+    
+    
+    
+   getgenv().Partz = "LowerTorso"
+getgenv().AutoPrediction = true
+
+
+function getClosestPlayerToCursor()
+        local closestPlayer
+        local shortestDistance = circle.Radius
+
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
+                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+            end
         end
+        return closestPlayer
+    end
+    
+    -- Hold E to shoot your guns very fast, works best with Revolver
+-- init
+if not game:IsLoaded() then
+   game.Loaded:Wait();
+end
+
+-- variables
+local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+
+local toolRemoteEvents = replicatedStorage:FindFirstChild("ToolRemoteEvents");
+local reloadWeapon = replicatedStorage:FindFirstChild("ReloadWeapon");
+
+local keyHeld = falseD
+
+-- events
+userInputService.InputBegan:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end
+   
+   if key.KeyCode == Enum.KeyCode.E then
+       keyHeld = true
+   end
+end);
+
+userInputService.InputEnded:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end
+   
+   if key.KeyCode == Enum.KeyCode.E then
+       keyHeld = false
+   end
+end);
+
+   getgenv().Prediction = 0.158
+runService.RenderStepped:Connect(function()
+   if keyHeld == true  then
+       if client.Character and client.Character:FindFirstChildOfClass("Tool") then
+           local tool = client.Character:FindFirstChildOfClass("Tool");
+           
+           toolRemoteEvents[((tool.Name ~= "Revolver" and tool.Name) or "Rev")]:FireServer(getClosestPlayerToCursor().Character
+               [getgenv().Partz].Position+(
+                   getClosestPlayerToCursor().Character.Humanoid.MoveDirection* getgenv().Prediction
+                   ),
+               tool);
+           reloadWeapon:FireServer();
+           
+   end
+   end
+end);
+
     end
 )
-end
+
 
 btns:Button(
     "god mode with with guns and katana killable",
@@ -618,7 +749,7 @@ end);
 )
 
 local tgls = serv:Channel("Toggles")
-
+local lol = false
 tgls:Toggle(
     "LoopWs",
     false,
@@ -630,50 +761,31 @@ while bool4 == true do
          
        hum.WalkSpeed =  _G.SpamWalkspeed  or 16
          end)
-end 
+end        
 end)
 end 
 )
 tgls:Toggle(
-    "AutoStomp Lmfao (currertly patched)",
+    "AutoStomp Lmfao working again!",
     false,
     function(bool4)
-while bool4 == true  do
-local Players = game:GetService("Players")
+        print(lol)
+		lol = bool4
+	
+     while lol == true do wait(0.5)
+		    
+			for i,v in pairs(game.Players:GetChildren())  do 
+			local args = {
+    [1] = workspace:WaitForChild(v.Name)
+}
 
-local part = game:GetService("Players").LocalPlayer.Character.Head
-
-local maxDistance = 10
-
-
-	task.wait(0.6)
-	local nearestPlayer, nearestDistance
-	for _, player in pairs(Players:GetPlayers()) do
-	    if player ~=  game:GetService("Players").LocalPlayer   and  player ~= nil then 
-		local character = player.Character
-		local distance = player:DistanceFromCharacter(part.Position)
-		if not character or 
-			distance > maxDistance or
-			(nearestDistance and distance >= nearestDistance)
-		then
-			continue
-		end
-		nearestDistance = distance
-		nearestPlayer = player
-		end
-	end
-	print(nearestPlayer)
-	pcall(function()
-	    	l__ReplicatedStorage__5:WaitForChild("KillStreakEvent"):FireServer();
-	l__ReplicatedStorage__5:WaitForChild("AttemptStomp"):FireServer(nearestPlayer.Character);
-				l__ReplicatedStorage__5:WaitForChild("KillStreakEvent"):FireServer();
-				end)
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
 end
+				end
     end
 )
 
 
-     
 
 local sldrs = serv:Channel("Character movement")
 
@@ -758,9 +870,10 @@ drops:Button(
     end
 )
 
+repeat task.wait() until  game.Players 
+repeat task.wait() until  game.Players.LocalPlayer
 
-
-
+if game.Players.LocalPlayer.Name ~= "MiztHubBot" then 
 local textbs = serv:Channel("Textboxes")
 owner = "MiztHubBot"
 local ownerchar  = game.Players[owner].Character
@@ -898,4 +1011,4 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
         end
 	end))
 end)
-
+end
