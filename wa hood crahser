@@ -7,7 +7,11 @@ local args = {
     [2] = "HeadScale",
     [3] = math.random(9,9999999)
 }
-
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do 
+    if v:IsA("BasePart") then 
+        v.Transparency = 1
+        end 
+end 
 
 
 game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
