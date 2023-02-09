@@ -1,0 +1,52 @@
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = Vector3.new(-804, 209, -281)
+wait(2)
+for i=  1,500 do 
+local args = {
+    [1] = "scale",
+    [2] = "HeadScale",
+    [3] = math.random(9,9999999)
+}
+
+
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+
+local args = {
+    [1] = "scale",
+    [2] = "BodyWidthScale",
+    [3] = math.random(9,9999999)
+}
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+local args = {
+    [1] = "scale",
+    [2] = "BodyHeightScale",
+    [3] = math.random(9,9999999)
+}
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+local args = {
+    [1] = "scale",
+    [2] = "BodyHeightScale",
+    [3] = math.random(9,9999999)
+}
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+
+local args = {
+    [1] = "scale",
+    [2] = "BodyProportionScale",
+    [3] = math.random(9,9999999)
+}
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+local args = {
+    [1] = "scale",
+    [2] = "BodyTypeScale",
+    [3] = math.random(9,9999999)
+}
+
+game:GetService("ReplicatedStorage").UpdateAvatar:FireServer(unpack(args))
+
+end 
