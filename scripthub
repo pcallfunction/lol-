@@ -24,7 +24,19 @@ game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("
 end
 )]]
 local inspect = serv:Channel("inspect elemant guns")
+inspect:Button(
+    "shoot sniper from gun?",
+    function()
 
+local args = {
+    [1] = game.Players["0nlyNxssa"].Character.HumanoidRootPart.Position,
+    [2] = game:GetService("Players"):WaitForChild(plr.Name).Character:FindFirstChildOfClass("Tool")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("Sniper"):FireServer(unpack(args))
+
+end
+) 
 local lol =  serv:Channel("Resize")
 
 local crash =  serv:Channel("Crasher  v1")
@@ -864,20 +876,6 @@ local drop =
     end
 )
 
-local inpo = inspect:Dropdown(
-    "shoot sniper from gun?(bugged so bad)",
-    hm,
-    function(bool)
-
-local args = {
-    [1] = game.Players[bool].Character.HumanoidRootPart.Position,
-    [2] = game:GetService("Players"):WaitForChild(plr.Name).Character:FindFirstChildOfClass("Tool")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("Sniper"):FireServer(unpack(args))
-
-end
-) 
 drops:Button(
     "Clear",
     function()
@@ -885,10 +883,7 @@ drops:Button(
     end
 )
 
-repeat task.wait() until  game.Players 
-repeat task.wait() until  game.Players.LocalPlayer
 
-if game.Players.LocalPlayer.Name ~= "MiztHubBot" then 
 local textbs = serv:Channel("Textboxes")
 owner = "MiztHubBot"
 local ownerchar  = game.Players[owner].Character
@@ -1026,4 +1021,4 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
         end
 	end))
 end)
-end
+
