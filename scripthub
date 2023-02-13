@@ -144,7 +144,25 @@ game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("
     end
 )
 
+lol:Button("do resize again"
+    ,function() 
+    local args = {
+    [1] = "accessory",
+    [2] = 119086102
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+DiscordLib:Notification("Notification", "wait a second until the hat is getting removed!", "eyss")
+    
+    
+wait(1)
+    local args = {
+    [1] = "accessory",
+    [2] = 119086102
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end)
 lol:Button("small resize"
     ,function() 
     
@@ -158,7 +176,7 @@ local Ignore = {
 
 function emf(thing)
 for i,v in pairs(chara:GetDescendants()) do
-        if v and v.Name == "OriginalSize" and v.Parent ~= chara.Head then
+        if v and v.Name == "OriginalSize" then
             if table.find(Ignore, v.Parent) then
             else
             v:remove()
@@ -167,7 +185,7 @@ for i,v in pairs(chara:GetDescendants()) do
 end
 
 for i,v in pairs(chara:GetDescendants()) do
-        if v and v:IsA("Attachment") and v.Parent ~= chara.Head then
+        if v and v:IsA("Attachment") then
             if v:FindFirstChild("OriginalPosition") then
             if table.find(Ignore, v.Parent) then
             else
