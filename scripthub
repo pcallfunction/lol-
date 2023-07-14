@@ -1,8 +1,9 @@
-
 local uh = {}
 
 
 function uh.hub()
+--https://www.roblox.com/games/9744954014/15B-ATM-Event-Zombie-Animation-Tha-Hood
+--https://www.roblox.com/games/9568982793/Free-Macro-Da-Hood-Battlegrounds
 local plr  = game:GetService('Players').LocalPlayer
   local haimissexy = true
   --THIS IS SEXY HUB HUB LOVE LOVE LOVE LOVE I LOVE TO SUCK DICK
@@ -932,9 +933,30 @@ local taser =game:GetService("RunService").Heartbeat:connect(function()
 
 end)
 
+local spamrerport = { "He said alot of bad words","He called me really bad stuff","it made me cry", "his words were really horrible"
+,"He said websites that arent allowed","He joked about me","I'm getting offended by his stuff","He said he is cheating","HE IS EXPLOITING!!","they is homophobic","they are racist","Please help me roblox!",
+"I'm really scared from them","He is saying personal stuff to me","He is asking for my age!","He is trying to get infromation from me","they are trying to make me suicide",
+"I cannot please help me roblox!","he is trying to date me","she is annoying me!" ,"he is trying to scam people","He is an evil person","he is sswearing alot!","He is against lgbt","inapopriate name",
+"inapopriate langauge","Horrible behavior","Abusing me","Joking about me publicly"}
+local rp = {"Cheating/Exploiting","Swearing","Bullying","Dating","Scamming","Exploiting","Personal Questions","Offsite Links"}
+
+local drop4 =
+    drops:Dropdown(
+    "spam report",
+   hm,
+   function (bool)
+	   
+   
+   local playername = bool
+local taser =game:GetService("RunService").RenderStepped:connect(function()
+wait(0.2)
+    game.Players:ReportAbuse(game.Players[bool], rp[math.random(1,#rp)],spamrerport[math.random(1,#spamrerport)] .. tostring(math.random(1,99))) 
+
+
+end)
 
 game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key) 
-if key =="l" then 
+if key =="b" then 
 if taser then 
 taser:Disconnect()
 end 
