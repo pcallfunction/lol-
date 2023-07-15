@@ -946,10 +946,15 @@ local taser =game:GetService("RunService").Heartbeat:connect(function()
 end)
 end)
 local spamrerport = { "He said alot of bad words","He called me really bad stuff","it made me cry", "his words were really horrible"
-,"He said websites that arent allowed","He joked about me","I'm getting offended by his stuff","He said he is cheating","HE IS EXPLOITING!!","they is homophobic","they are racist","Please help me roblox!",
+,"He said websites that arent allowed","He joked about me","I'm getting offended by his stuff","He said he is cheating","HE IS EXPLOITING!!","they is homophobic","they are racist",
+"Please help me roblox!","He is racist towards my religion","They are making fun of me","His username offends me","His chats are trying to make violence","he is punching me",
 "I'm really scared from them","He is saying personal stuff to me","He is asking for my age!","He is trying to get infromation from me","they are trying to make me suicide",
-"I cannot please help me roblox!","he is trying to date me","she is annoying me!" ,"he is trying to scam people","He is an evil person","he is sswearing alot!","He is against lgbt","inapopriate name",
-"inapopriate langauge","Horrible behavior","Abusing me","Joking about me publicly"}
+"I cannot please help me roblox!","he is trying to date me","she is annoying me!" ,"he is trying to scam people","He is an evil person","he is sswearing alot!","He is against lgbt",
+"inapopriate name","He is really mean",
+"inapopriate langauge","Horrible behavior","Abusing me","Joking about me publicly","He tried to ask me for my passwords","He said n word","He said body parts","private body parts arent allowed"
+,"I'm calling my parents from this behavior!"}
+
+
 local rp = {"Cheating/Exploiting","Swearing","Bullying","Dating","Scamming","Exploiting","Personal Questions","Offsite Links"}
 
 local drop4 =
