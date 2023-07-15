@@ -89,7 +89,16 @@ end
 ) 
 
 
-
+inspect:Button(
+    "get all cash",
+    function()
+ for i,v in pairs(game.Workspace:GetChildren()) do 
+     if v.Name == "Cash" then 
+         fireclickdetector(v:WaitForChild("Activator"))
+         end 
+     end 
+end
+) 
 inspect:Button(
     "put all knifes",
     function()
