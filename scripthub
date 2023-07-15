@@ -1142,6 +1142,12 @@ textbs:Button(
  end
 )
 
+debug:Button(
+"Dex explorer",
+function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+
 textbs:Button(
     "emote shit",
     function()
