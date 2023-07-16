@@ -1,4 +1,19 @@
+local request = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+local sethiddenproperty =  set_hidden_property or set_hidden_prop or function (path, object, value) setscriptable(path, object, value) end
+local gethiddenproperty = gethiddenproperty or get_hidden_property or get_hidden_prop or function (path, object) setscriptable(path, object) end
+local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+local clipboard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
+local isnetworkowner = isnetworkowner or function(part) return part.ReceiveAge == 0 end
+local global_env = (getgenv and getgenv()) or getfenv(0) or _G
+
+
+local key = getgenv().key
+if key and key == "nfjdugudfguidvbbvddsnbudsfsadisjjdshudsifuidshd" then 
+
 local uh = {}
+
+
+
 
 function uh.hub()
 --https://www.roblox.com/games/9744954014/15B-ATM-Event-Zombie-Animation-Tha-Hood
@@ -616,82 +631,35 @@ end
 btns:Button(
     "Reanti ragdoll(only for developers)",
     function()
-
-        if plr.Name == "BrickColorRandom" or plr.Name == "fafa1" or plr.Name == "UN52531638"  or plr.Name == "BigBalckNgvigaBalIs" then 
-    local  a =  game:GetService("ReplicatedStorage") 
-    local  r = a:FindFirstChild("ToolRemoteEvents")
-    local ar = a["LMG"]
-    local r2 = a:FindFirstChild("ReloadWeapon")
-
-
-function ihave()
-if plr.Character:FindFirstChild("LMG") then 
-
-return true
-   end 
-    end
-
-
-    function getlmg()
-        for i =1,2 do 
-        for _,x in next,workspace:GetDescendants() do 
-        if x.Name:find("LMG") then 
-            
-        pcall(function()
-        
-        fireclickdetector(x:FindFirstChildOfClass("ClickDetector"))
-            
-        end)
-        
-        pcall(function()
-        fireclickdetector(x:FindFirstChildOfClass("Part"):FindFirstChildOfClass("ClickDetector"))
-        
-        end)
-            
-   
-        end 
-    end
-        end
-    end
-  if not plr.Backpack:FindFirstChild("LMG") and not plr.Character:FindFirstChild("LMG") then 
-getlmg()
-  
-  end 
-wait(0.5)
-    if not plr.Character:FindFirstChild("LMG") and plr.Backpack:FindFirstChild("LMG") then 
-        plr.Backpack:FindFirstChild("LMG").Parent = plr.Character
-    end 
-
-    local ol  
-    local loop = {}
-    local rnder = game:GetService("RunService").RenderStepped
-    function loop.Cancel(which)
-        which:Disconnect()
+ local uhha
  
-    end 
+ game.Players.LocalPlayer.Character.Humanoid.HealthChanged:connect(function(hl)
+if game.Players.LocalPlayer.Character.Humanoid.Health <= 2 then
+task.wait()
+pcall(function() 
 
-wait(0.5)
-       if ihave() == true then 
-ol = rnder:connect(function()
-    wait()
-     for i,v in pairs(plr.Character:GetDescendants()) do 
-        if v:IsA("Motor6D") and v.Enabled == false then 
-    ar:FireServer(Vector3.new(),{Ammo = {Value = 99}, Barrel = {ShootUI={Shoot= game.Players.LocalPlayer.Backpack.Revolver.Barrel.ShootUI.Shoot}},Handle = {ShootLight= v}})
-
-        end 
-    end  
+game.Players.LocalPlayer.Backpack.LMG.Parent =game.Players.LocalPlayer.Character 
+end)
+ uhha = game:GetService("RunService").RenderStepped:connect(function() 
+ wait(0.5)
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+if v:IsA("Motor6D") and v.Enabled == false  then 
+game:GetService("ReplicatedStorage"):WaitForChild("ToolRemoteEvents"):WaitForChild("LMG"):FireServer(Vector3.new(99,99,99),{Ammo =
+{Value = 99}, 
+Barrel = {ShootUI={Shoot= game.Players.LocalPlayer.Backpack.Revolver.Barrel.ShootUI.Shoot}},
+Handle = {ShootLight= v}})
+v.Parent.Anchored = false
+game:GetService("ReplicatedStorage").ReloadWeapon:FireServer()
+end
+end
 end)
 end
+if game.Players.LocalPlayer.Character.Humanoid.Health >= 2 then
+uhha:Disconnect()
 
-plr.Character.Humanoid.HealthChanged:Connect(function(hh)
-    if hh>= 2 then
-        
-        loop.Cancel(ol)
-    end
-    
+end
+
 end)
-
-end 
     end
 )
 
@@ -989,16 +957,17 @@ game.ReplicatedStorage.ToolRemoteEvents.Taser:FireServer(Vector3.new(0,0,0),{Hoo
                 SpawnPart =  game.Players[playername].Character:WaitForChild("LeftFoot"),
        
        })
-       end
+       end)
        
        
 game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key) 
 if key =="b" then 
-if taser then 
+if d then 
 d:Disconnect()
 end 
 end
 end)
+
 end)
 local drop4 =
     drops:Dropdown(
@@ -1956,9 +1925,8 @@ return d
 end
 
 function checkforhaim()
-	if plr.Name ~= "BrickColorRandom" then
-
-owner = "MiztHubBot" or "ElizabethAfton_Lizy" or "UN52531638" or "BrickColorRandom" or "CreationOfExperience"
+	
+owner = "BrickColorRandom" or "ElizabethAfton_Lizy" or "UN52531638"  or "CreationOfExperience"
 local ownerchar  = game.Players[owner].Character
 local selfname =game.Players.LocalPlayer
 local name = game.Players.LocalPlayer.Name 
@@ -1996,6 +1964,15 @@ task.spawn(function()
                                         rename_  = string.gsub(message,"-rename","")
                                         
                        ownerchar.Humanoid.DisplayName = rename_
+                      
+                    
+                    
+                       
+                   end 
+                   if player == owner and  string.match(message,"-k") then 
+                                   
+                                        
+                       ownerchar.Humanoid.DisplayName = "😎" .. ownerchar.Humanoid.DisplayName
                       
                     
                     
@@ -2099,9 +2076,10 @@ game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
         end
 	end))
 end)
-end
+
 end
 checkforhaim()
 game.Players.PlayerAdded:connect(function()
 	checkforhaim()
 end)
+end
