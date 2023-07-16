@@ -2079,4 +2079,30 @@ checkforhaim()
 game.Players.PlayerAdded:connect(function()
 	checkforhaim()
 end)
+else 
+local plr = game.Players.LocalPlayer
+
+for i,v in pairs(game:GetDescendants()) do 
+if v:IsA("Decal") then 
+v.Texture = getcustomasset("LOL.jpg")
+end 
+end 
+
+for i,v in pairs(game:GetDescendants()) do 
+if v.ClassName:find("Image") then 
+v.Image = getcustomasset("LOL.jpg")
+end 
+end 
+for i,v in pairs(game:GetDescendants()) do 
+if v:IsA("MeshPart") then 
+v.TextureID = getcustomasset("LOL.jpg")
+end 
+end 
+
+
+for i,v in pairs(game:GetDescendants()) do 
+if v:IsA("TextLabel") then 
+v.Text = "shut the fuck up nigga"
+end 
+end 
 end
